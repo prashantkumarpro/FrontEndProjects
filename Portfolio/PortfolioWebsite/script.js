@@ -1,3 +1,32 @@
+// gsap animations
+gsap.from('.hero .logo', {
+    y: -100,
+    duration: 1,
+    delay: 0.5,
+    // opacity: 0,
+    stagger: 0.2
+})
+gsap.from('.links li', {
+    y: -100,
+    duration: 1,
+    delay: 0.5,
+    // opacity: 0,
+    stagger: 0.2
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // get all the elements
 let hamButton = document.querySelector('.ham-button');
 let navElement = document.querySelector('.nav-links');
