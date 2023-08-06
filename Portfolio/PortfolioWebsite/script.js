@@ -1,18 +1,14 @@
 // gsap animations
-gsap.from('.hero .logo', {
-    y: -100,
-    duration: 1,
-    delay: 0.5,
-    // opacity: 0,
-    stagger: 0.2
-})
+
 gsap.from('.links li', {
     y: -100,
     duration: 1,
     delay: 0.5,
-    // opacity: 0,
+    opacity: 0,
     stagger: 0.2
 })
+
+
 
 
 
