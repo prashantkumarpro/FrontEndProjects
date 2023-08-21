@@ -2,6 +2,9 @@ let timer = 60;
 let hitrn = 0;
 let score = 0;
 
+
+
+
 // runtimer 
 function runTimer() {
 
@@ -11,8 +14,9 @@ function runTimer() {
             document.querySelector('#timerval').textContent = timer;
         } else {
             clearInterval(timerInt);
-            document.querySelector('#pbotom').innerHTML = 'game over';
+            document.querySelector('#bubble-page').innerHTML = `<h1>Game Over </h1>`;
             document.querySelector('.result-container').style.display = 'block'
+
 
         }
 
@@ -28,7 +32,7 @@ function makeBubble() {
         let rn = Math.floor(Math.random() * 10);
         clutter += ` <div class="bubble">${rn}</div>`
     }
-    document.querySelector('#pbotom').innerHTML = clutter;
+    document.querySelector('#bubble-page').innerHTML = clutter;
 }
 
 
@@ -43,16 +47,37 @@ function increaseScore() {
     document.querySelector('#scoreval').innerHTML = score;
 }
 
-document.querySelector('#pbotom')
+let totalHitval = [];
+let totalHit = document.querySelector('#total-hit');
+
+let totalCorrectHitVal = [];
+let totalCorrectHit = document.querySelector('#correct-hit');
+
+let totalInCorrectHitVal = [];
+let totalInCorrectHit = document.querySelector('#incorrect-hit');
+
+document.querySelector('#bubble-page')
     .addEventListener("click", function (e) {
-        let bubblee = Number(e.target.textContent);
-        if (bubblee === hitrn) {
+
+        let bubble = Number(e.target.textContent);
+        totalHitval.push(bubble)
+        totalHit.innerHTML = totalHitval.length;
+
+
+
+        if (bubble === hitrn) {
+            totalCorrectHitVal.push(bubble);
+            totalCorrectHit.innerHTML = totalCorrectHitVal.length;
             increaseScore()
             makeBubble()
             getnewHit()
         } else {
-            console.log('hit the correct number')
+            // console.log('hit the correct number')
+            if (bubble != hitrn) {
+                totalInCorrectHitVal.push(bubble);
+                totalInCorrectHit.innerHTML = totalInCorrectHitVal.length;
 
+            }
         }
     })
 
@@ -70,7 +95,14 @@ console.log(restart)
 restart.addEventListener('click', function () {
     document.querySelector('.result-container').style.display = 'none'
     restartGame()
+    totalHit.innerHTML = '0';
+    totalInCorrectHit.innerHTML = '0';
+    totalCorrectHit.innerHTML  = '0';
 })
+
+
+
+
 
 getnewHit()
 runTimer()
