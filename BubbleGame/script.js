@@ -1,4 +1,4 @@
-let timer = 60;
+let timer = 5;
 let hitrn = 0;
 let score = 0;
 
@@ -62,9 +62,6 @@ document.querySelector('#bubble-page')
         let bubble = Number(e.target.textContent);
         totalHitval.push(bubble)
         totalHit.innerHTML = totalHitval.length;
-
-
-
         if (bubble === hitrn) {
             totalCorrectHitVal.push(bubble);
             totalCorrectHit.innerHTML = totalCorrectHitVal.length;
@@ -72,7 +69,6 @@ document.querySelector('#bubble-page')
             makeBubble()
             getnewHit()
         } else {
-            // console.log('hit the correct number')
             if (bubble != hitrn) {
                 totalInCorrectHitVal.push(bubble);
                 totalInCorrectHit.innerHTML = totalInCorrectHitVal.length;
@@ -83,8 +79,9 @@ document.querySelector('#bubble-page')
 
 // Define the restartGame function
 function restartGame() {
-
-    timer = 60; // Reset the timer
+    score = 0;
+    timer = 5; // Reset the timer
+    document.querySelector('#scoreval').innerHTML = score;
     runTimer(); // Start the timer again
     makeBubble(); // Generate new bubbles
     getnewHit(); // Get a new hit number
@@ -97,7 +94,7 @@ restart.addEventListener('click', function () {
     restartGame()
     totalHit.innerHTML = '0';
     totalInCorrectHit.innerHTML = '0';
-    totalCorrectHit.innerHTML  = '0';
+    totalCorrectHit.innerHTML = '0';
 })
 
 
