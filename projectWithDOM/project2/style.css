@@ -113,11 +113,11 @@ body {
 .mid #solid-heart{
     position: absolute;
     color: #fff;
-    font-size: 30px;
+    font-size: 90px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    transition: all ease-in 0.5s;
+    transform: translate(-50%, -50%) scale(0) ;
+    transition: transform ease 0.2s;
     opacity: 0;
 }
 .mid img {
@@ -146,6 +146,9 @@ body {
 }
 .left-icon i{
     font-size: 20px;
+    transition: all ease-in 0.3;
+    cursor: pointer;
+
 }
 .right-icon i{
     font-size: 20px;
@@ -154,6 +157,7 @@ body {
 .footer #liked-love {
     display: none;
     color: red;
+    transition: all ease-in 0.5s;
 }
 
 
