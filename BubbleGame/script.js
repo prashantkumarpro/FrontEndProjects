@@ -1,4 +1,4 @@
-let timer = 5;
+let timer = 60;
 let hitrn = 0;
 let score = 0;
 
@@ -80,7 +80,7 @@ document.querySelector('#bubble-page')
 // Define the restartGame function
 function restartGame() {
     score = 0;
-    timer = 5; // Reset the timer
+    timer = 60; // Reset the timer
     document.querySelector('#scoreval').innerHTML = score;
     runTimer(); // Start the timer again
     makeBubble(); // Generate new bubbles
