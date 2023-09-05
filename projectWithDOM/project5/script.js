@@ -26,7 +26,6 @@ styoriyan.innerHTML = clutter;
 styoriyan.addEventListener('click', function (event) {
 
     styoriyan.style.display = 'none'
-    document.querySelector('.nav').style.display = 'none'
     document.querySelector('#full-screen').style.display = 'block'
     document.querySelector('#full-screen').style.backgroundImage = `url(${arryOfstoriyan[event.target.id].story})`
     
@@ -34,7 +33,7 @@ styoriyan.addEventListener('click', function (event) {
     setTimeout(() => {
     document.querySelector('#full-screen').style.display = 'none'
     styoriyan.style.display = 'block'
-    document.querySelector('.nav').style.display = 'block'
+
     }, 3000);
    
 })
